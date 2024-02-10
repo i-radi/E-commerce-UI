@@ -1,0 +1,23 @@
+<div class="row py-4 align-items-center">
+    <div class="col-md-4">
+        <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let slide of product?.images">
+              <ng-template carouselSlide >
+                <img [src]="slide" [alt]="product?.title" [title]="product?.title">
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+    </div>
+    <div class="col-md-8">
+        <h2 class="h4 fw-bolder mb-2">{{product?.title}}</h2>
+        <p class="text-muted p-3">{{product?.description}}</p>
+        <div class="d-flex align-items-center justify-content-between">
+            <span class="fw-bold text-muted font-sm">{{product?.price|currency:"EUR"}}</span>
+            <div>
+                <i class="fas fa-star rating-color"></i>
+                <span class="fw-bold text-muted font-sm">{{product?.ratingsAverage}}</span>
+            </div>
+        </div>
+        <button class="btn bg-main text-white w-100"> + Add</button>
+    </div>
+</div>

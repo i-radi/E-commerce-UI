@@ -1,0 +1,64 @@
+<nav
+    class="navbar navbar-expand-sm navbar-light bg-light fixed-top"
+>
+    <div class="container">
+        <img src="../../../assets/imgs/logo.jpg" alt="logo" style="width: 25px;">
+        <a class="navbar-brand"  routerLink="home">FreshCart</a>
+        <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="products">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="categories">Categories</a>
+                </li>                
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="brands">Brands</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                <li class="nav-item  d-flex align-items-center">
+                    <i class="fab mx-2 fa-instagram"></i>
+                    <i class="fab mx-2 fa-facebook"></i>
+                    <i class="fab mx-2 fa-tiktok"></i>
+                    <i class="fab mx-2 fa-twitter"></i>
+                    <i class="fab mx-2 fa-linkedin"></i>
+                    <i class="fab mx-2 fa-youtube"></i>
+                </li>
+                <li *ngIf="!isLogin" class="nav-item">
+                    <a class="nav-link" routerLink="login">Login</a>
+                </li>
+                <li *ngIf="!isLogin" class="nav-item">
+                    <a class="nav-link" routerLink="register">Register</a>
+                </li>
+                <li *ngIf="isLogin" class="nav-item">
+                    <span (click)="logout()" class="nav-link cursor-pointer">Logout</span>
+                </li>
+                <li *ngIf="isLogin" class="nav-item">
+                    <a class="nav-link position-relative" routerLink="cart">
+                        <i class="fas fa-cart-shopping text-main fa-lg"></i>
+                        <span *ngIf="numOfitems !== 0" class="badge bg-danger text-white position-absolute top-0 end-0">{{numOfitems}}</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
