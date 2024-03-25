@@ -1,1 +1,10 @@
-<p>categories works!</p>
+<div class="row">
+    <div *ngFor="let category of categories" class="col-md-3">
+        <div class="brand px-2 py-4">
+            <a [routerLink]="['/branddetails', category._id]">
+                <img src="{{category.image}}" alt="" class="w-100">
+                <h3 class="h6 fw-bold text-main text-center font-sm pt-2">{{category.name}}</h3>
+            </a>
+        </div>
+    </div>
+</div>

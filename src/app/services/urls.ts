@@ -7,5 +7,6 @@ export const urls = {
     categories:'categories',
     category:'categories',
     cart:'cart',
-    onlinePayment:'orders/checkout-session/'
+    onlinePayment:'orders/checkout-session/',
+    brands:'brands'
 }

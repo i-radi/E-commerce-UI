@@ -43,4 +43,8 @@ export class LoginComponent {
       });
     }
   }
+
+  get email(){
+    return this.loginForm.get('email');
+  }
 }

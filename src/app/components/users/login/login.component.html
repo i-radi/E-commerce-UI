@@ -8,7 +8,7 @@
     <form (ngSubmit)="handleLogin(loginForm)" [formGroup]="loginForm">
                 
         <label for="email">Email :</label>
-        <input formControlName="email" type="email" class="form-control mb-2" id="email">
+        <input formControlName="email" type="email" class="form-control mb-2" id="email" [class.is-invlaid]="email?.invalid">
         <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="alert alert-danger">
             <p *ngIf="loginForm.get('email')?.getError('required')" class="m-0">email is required</p>
             <p *ngIf="loginForm.get('email')?.getError('email')" class="m-0">invalid email</p>

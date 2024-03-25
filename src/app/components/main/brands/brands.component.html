@@ -1,1 +1,9 @@
-<p>brands works!</p>
+<div class="row">
+    <div *ngFor="let brand of brands" class="col-md-3">
+        <div class="brand px-2 py-4">
+            <a [routerLink]="['/branddetails', brand._id]">
+                <img src="{{brand.image}}" alt="" class="w-100">
+            </a>
+        </div>
+    </div>
+</div>
